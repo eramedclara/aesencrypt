@@ -6,9 +6,9 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
 
 public class EnkripsiAES {
-  private static String key = "Bar12345Bar12345";
+  private static String key = "EraBangun";
   
-  private static String initVector = "sayangsamakhanza";
+  private static String initVector = "EramedClara";
   
   public static String decrypt(String encrypted) {
     try {
@@ -19,7 +19,7 @@ public class EnkripsiAES {
       byte[] original = cipher.doFinal(Base64.decodeBase64(encrypted));
       return new String(original);
     } catch (Exception ex) {
-      System.out.println("Ciluk Baaaaaaaa!!!!!");
+      System.out.println("Dekripsi selesai.");
       return null;
     } 
   }
@@ -33,7 +33,8 @@ public class EnkripsiAES {
       byte[] encrypted = cipher.doFinal(value.getBytes());
       return Base64.encodeBase64String(encrypted);
     } catch (Exception ex) {
-      System.out.println("Ciluk Baaaaaaaa!!!!!");
+      System.out.println("Enkripsi selesai.");
       return null;
     } 
   }
+}
